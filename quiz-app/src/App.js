@@ -1,11 +1,15 @@
 import './App.css';
-import GamifiedQuizView from './components/GamifiedQuizView';
+// import GamifiedQuizView from './Components/GamifiedQuiz/GamifiedQuizView';
+import { QUIZ_QUESTIONS } from './Constants/QuizQuestionConstants';
+import QuizQuestion from './Components/QuizQuestionView/QuizQuestion';
+import RoadtripAnimation from './Components/RoadTrip';
 
 function App() {
   return (
     <div className="App">
-      {/* <div className='navigation-bar'></div> */}
-      <div> <GamifiedQuizView/></div> 
+      {/* <QuizQuestion/> */}
+      <RoadtripAnimation/>
+      {/* <GamifiedQuizView/> */}
     </div>
   );
 }
