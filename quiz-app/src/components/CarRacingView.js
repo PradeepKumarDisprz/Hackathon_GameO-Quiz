@@ -4,10 +4,8 @@ import carimage from '../Images/carimage2.jpeg';
 import playGround from '../Images/playGround.jpeg';
 import carLane from '../Images/car-lane.jpg';
 import './carRacingView.css';
-import { Canvas } from "@react-three/fiber";
 import Car from './car';
-import Car3D from './Car3D';
-var x,y;
+
 function CarRacingView(){
  const initialCheckstate = [false,false,false,false]
  const [Xlocation,setXLocation]= useState(0);

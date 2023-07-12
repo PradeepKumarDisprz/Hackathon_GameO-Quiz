@@ -13,3 +13,15 @@
   top: 80px;
   border: 2px solid balck;
 }
+.container{
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  width: 100%;
+}
+.static-conatiner{
+  flex-basis: 60%;
+}
+.game-container{
+  flex-basis: 40%;
+}
