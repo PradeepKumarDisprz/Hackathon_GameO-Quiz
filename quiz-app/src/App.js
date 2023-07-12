@@ -1,15 +1,21 @@
 import './App.css';
-// import GamifiedQuizView from './Components/GamifiedQuiz/GamifiedQuizView';
+import CarRacingView1 from './components/dummyCar'
 import { QUIZ_QUESTIONS } from './Constants/QuizQuestionConstants';
-import QuizQuestion from './Components/QuizQuestionView/QuizQuestion';
-import RoadtripAnimation from './Components/RoadTrip';
+import QuizQuestion from './components/QuizQuestionView/QuizQuestion';
+import RoadTrip from './components/RoadTrip';
+// import QuizQuestion from './Components/Qu';
+// import RoadtripAnimation from './Components/RoadTrip';
+import ProgressBar from './components/ProgressBar';
 
 function App() {
   return (
     <div className="App">
-      {/* <QuizQuestion/> */}
-      <RoadtripAnimation/>
-      {/* <GamifiedQuizView/> */}
+       <div navigation-bar><ProgressBar/></div>
+       <div className='container'>
+         <div className='static-container'><QuizQuestion/></div>
+         <div className='game-conatiner'><CarRacingView1/></div>   
+      </div>
+     
     </div>
   );
 }

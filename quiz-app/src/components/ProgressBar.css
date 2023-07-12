@@ -1,0 +1,60 @@
+.progress-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.step{
+    color: gray;
+    font-size: large;
+    /* width: 800px; */
+    /* border: 2px solid  black; */
+}
+.step-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 36px; */
+}
+
+.step-index{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+    background-color: pink;
+    border-radius: 100%;
+    font-weight: bold;
+    color: white;
+}
+/* .step-item ::before {
+    content: "";
+    display: block;
+    width: 8000px;
+    height: 2px;
+    background: #000;
+    left: 0;
+    z-index: -1;
+    top: 50%;
+    position: absolute;
+} */
+.empty-line{
+    width: 800px;
+    border: 2px solid balck;
+}
+.active .step-index{
+    background-color:  blue;
+}
+.complete .step-index{
+    background-color: green;
+}
+/* .complete p{
+    color: white;
+} */
+.incorrect .step-index{
+    background-color: red;
+}

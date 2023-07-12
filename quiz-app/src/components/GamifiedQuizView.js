@@ -1,5 +1,6 @@
 import './gamifiedQuizView.css';
 import CarRacingView from './CarRacingView';
+import CarRacingView1 from './dummyCar';
 
 function GamifiedQuizView(){
     return(
@@ -8,7 +9,7 @@ function GamifiedQuizView(){
                 div 2
             </div>
             <div className='racing-view'>
-               <CarRacingView/>
+               <CarRacingView1/>
             </div>
         </div>
     )
