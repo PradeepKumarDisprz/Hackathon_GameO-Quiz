@@ -5,9 +5,9 @@ import carImage from '../Images/carimage2.jpeg';
 export default function Car(props) {
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const carRef= useRef();
-  const containerWidth = 500; // Adjust the container width as needed
-  const containerHeight = 600; // Adjust the container height as needed
+
+  const containerWidth = 500;
+  const containerHeight = 600; 
 
     useEffect(() => {
       const handleKeyDown = (event) => {
@@ -62,12 +62,11 @@ export default function Car(props) {
       position: 'absolute',
       left: position.x + 'px',
       top: position.y + 'px',
-      transition: 'left 0.5s, top 0.5s', // Add a smooth transition effect
-       // Customize the car appearance
+      transition: 'left 0.5s, top 0.5s',
 }}> <img src={carImage}  ref={el=>{
  if(!el) return;
- props.onLocationChange(el.getClientRects()[0].x)
- console.log(el.getClientRects()[0].x)
+ props.onLocationChange(el.getClientRects()[0].x,el.getClientRects()[0].y)
+ console.log(el.getClientRects()[0])
 }
 } className='car-image' alt="React Image" />
 {console.log('')}</div>
