@@ -487,7 +487,7 @@ const RoadTripAnimation = () => {
 
   return (
     <div className="car-animation">
-      <canvas ref={canvasRef} width={800} height={600} className="canvas-anim"/>
+      <canvas ref={canvasRef} width={800} height={500} className="canvas-anim"/>
       <canvas ref={canvas2Ref} width={800} height={600} style={{display:'none'}}/>
     </div>
   );

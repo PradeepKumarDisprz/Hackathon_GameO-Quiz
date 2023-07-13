@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { QUIZ_QUESTIONS } from "../../Constants/QuizQuestionConstants";
 import QuestionItem from "./QuestionItem";
+
 const QuizQuestion = ()=>{
 
     const [question,setQuestion] = useState(QUIZ_QUESTIONS)
@@ -12,7 +13,9 @@ const QuizQuestion = ()=>{
         setQuestionIndex(questionIndex+1);
     }
 
-    const toRender = questionIndex >= question.length ? <div>Hello</div> : <QuestionItem questionItem={question[questionIndex]} handleQuestion={handleQuestion}/>
+    const toRender = questionIndex >= question.length ? 
+                                    <div>Popup</div> 
+                                    : <QuestionItem questionItem={question[questionIndex]} handleQuestion={handleQuestion}/>
 
     return toRender
 }

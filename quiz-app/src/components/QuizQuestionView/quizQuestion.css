@@ -1,0 +1,61 @@
+.quiz-question-wrapper{
+    position: absolute;
+    z-index: 100;
+    width: 500px;
+    height: 530px;
+    padding: 25px 20px;
+    padding-top: 30px;
+    border: 1px solid;
+    top: 142px;
+    left: 5%;
+    background: linear-gradient(45deg, rgba(175, 151, 151, 0.1),rgba(255,255,255,0));
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    border-radius: 15px;
+    box-shadow: 0 8px 62px 90 rgba(0,0,0,0.7);  
+
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    .question{
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        width: 90%;
+        margin-left: 13px;
+        margin-bottom: 20px;
+        margin-top: 8px;
+        padding:25px 14px;
+        border:1px solid;
+        border-radius: 10px;
+    }
+
+    .quiz-options ol{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+        width: 95%;
+        padding:18px 14px;
+        font-size: 18px;
+        font-weight: bold;
+
+        .item{
+            margin-left: 15px;
+            padding: 15px 10px;
+            border: 1px solid;
+            margin-bottom: 35px;
+            border-radius: 10px;
+        }
+
+    }
+}
+
+.glass-effect{
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    
+}
