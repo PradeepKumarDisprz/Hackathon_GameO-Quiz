@@ -5,14 +5,13 @@
     height: 530px;
     padding: 25px 20px;
     padding-top: 30px;
-    border: 1px solid;
     top: 142px;
     left: 5%;
-    background: linear-gradient(45deg, rgba(175, 151, 151, 0.1),rgba(255,255,255,0));
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(60px);
-    border-radius: 15px;
-    box-shadow: 0 8px 62px 90 rgba(0,0,0,0.7);  
+    background: linear-gradient(180deg, #af97971a,#ffffff00);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 40px;
+    box-shadow: 1px 1px 5px #7b7a7a;  
 
     display: flex;
     flex-direction: column;
@@ -28,7 +27,7 @@
         margin-bottom: 20px;
         margin-top: 8px;
         padding:25px 14px;
-        border:1px solid;
+        box-shadow: 1px 1px 5px #7b7777;
         border-radius: 10px;
     }
 
@@ -45,7 +44,7 @@
         .item{
             margin-left: 15px;
             padding: 15px 10px;
-            border: 1px solid;
+            box-shadow: 1px 1px 5px #a3a2a2;
             margin-bottom: 35px;
             border-radius: 10px;
         }
