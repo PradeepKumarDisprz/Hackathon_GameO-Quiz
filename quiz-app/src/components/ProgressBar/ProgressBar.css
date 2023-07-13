@@ -1,12 +1,14 @@
 .progress-bar{
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 50%;
+    margin: auto;
 }
 .step{
-    /* color: #0e0e0e; */
-    font-size: 18px;
-    font-weight: bold;
+    color: black;
+    font-size: large;
+    /* width: 800px; */
+    /* border: 2px solid  black; */
 }
 .step-item{
     position: relative;
@@ -14,43 +16,59 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #d4d4d4;
+    z-index: 3;
+    /* width: 36px; */
 }
 
-/* .step-index{
-    width: 20px;
-    height: 20px;
+.step-index{
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    /* z-index: 10; */
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: gray;
     border-radius: 100%;
     font-weight: bold;
-    color: rgb(5, 5, 5);
-} */
-.step-item ::before{
-    content: "";
-    display: block;
-    width: 89px;
-    height: 10px;
-    background: #000;
-    left: 0;
-    z-index: -10;
-    position: absolute;
+    /* color: white; */
 }
-.active .step-index {
+.empty-line{
+    width: 800px;
+    border: 2px solid balck;
+}
+.active .step-index{
     background-color:  blue;
-    color: #fff;
 }
 .complete .step-index{
     background-color: green;
-    color: #fff;
 }
 /* .complete p{
     color: white;
 } */
 .incorrect .step-index{
-    background-color: red;
-    color: #fff;
+    /* background-color: red; */
+}
+.button-container{
+   /* border: 2px solid black; */
+   width: 30%;
+   align-items: center;
+   margin: auto;
+   margin-top: 20px;
+}
+.btn{
+    width: 80px;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color:  rgb(167, 167, 234);
+    border: 1px solid blue;
+    align-items: center;
+}
+.complete:not(:first-child)::before{
+    background-color: green;
 }
