@@ -1,4 +1,5 @@
 import'./quizQuestion.css';
+import React from 'react';
 
 const QuestionItem = ({questionItem,handleQuestion}) =>{
     return (

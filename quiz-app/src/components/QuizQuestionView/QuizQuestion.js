@@ -1,17 +1,9 @@
-import React,{useState} from "react";
-import { QUIZ_QUESTIONS } from "../../Constants/QuizQuestionConstants";
+import React from "react";
 import QuestionItem from "./QuestionItem";
 
-const QuizQuestion = ()=>{
+const QuizQuestion = (props)=>{
 
-    const [question,setQuestion] = useState(QUIZ_QUESTIONS)
-    const [questionIndex, setQuestionIndex] = useState(0)
-
-    const handleQuestion = () => {
-        question[questionIndex].isQuestionAttempted = true
-        setQuestion(question);
-        setQuestionIndex(questionIndex+1);
-    }
+    const {question, questionIndex, handleQuestion} = props
 
     const toRender = questionIndex >= question.length ? 
                                     <div>Popup</div> 

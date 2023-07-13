@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import './roadTrip.css';
 
-const RoadTripAnimation = () => {
+const RoadTripAnimation = (props) => {
+  const {question} = props;
+
   const canvasRef = useRef(null);
   const canvas2Ref = useRef(null);
 
@@ -14,7 +16,7 @@ const RoadTripAnimation = () => {
     const colors = {
       sky: "#D4F5FE",
       mountains: "#83CACE",
-      ground: "#8FC04C",
+      ground: "#73B043",
       groundDark: "#73B043",
       road: "#606a7c",
       roadLine: "#FFF",
@@ -268,11 +270,11 @@ const RoadTripAnimation = () => {
       if (state.section < 0) {
         state.section = randomRange(1000, 9000);
 
-        newCurve = randomRange(-50, 50);
+        // newCurve = randomRange(-50, 50);
 
-        if (Math.abs(state.curve - newCurve) < 20) {
-          newCurve = randomRange(-50, 50);
-        }
+        // if (Math.abs(state.curve - newCurve) < 20) {
+        //   newCurve = randomRange(-50, 50);
+        // }
 
         state.curve = newCurve;
       }
@@ -457,8 +459,8 @@ const RoadTripAnimation = () => {
         state.bgpos += (state.currentCurve * 0.02) * (state.speed * 0.2);
         state.bgpos = state.bgpos % canvas.width;
 
-        ctx.putImageData(storage.bg, state.bgpos, 5);
-        ctx.putImageData(storage.bg, state.bgpos > 0 ? state.bgpos - canvas.width : state.bgpos + canvas.width, 5);
+        // ctx.putImageData(storage.bg, state.bgpos, 5);
+        // ctx.putImageData(storage.bg, state.bgpos > 0 ? state.bgpos - canvas.width : state.bgpos + canvas.width, 5);
 
         state.offset += state.speed * 0.05;
         if (state.offset > settings.ground.min) {
@@ -472,18 +474,18 @@ const RoadTripAnimation = () => {
         drawRoad(settings.road.min, settings.road.max, 10, colors.road);
         drawRoad(3, 24, 0, ctx.createPattern(canvas2, 'repeat'));
         drawCar();
-        drawHUD(ctx, 630, 340, colors.hud);
+        drawHUD(ctx, 730, 240, colors.hud);
 
         requestAnimationFrame(draw);
       }, 1000 / settings.fps);
     };
 
-    drawBg();
+    // drawBg();
     draw();
 
     window.addEventListener("keydown", keyDown, false);
     window.addEventListener("keyup", keyUp, false);
-  }, []);
+  });
 
   return (
     <div className="car-animation">
