@@ -1,12 +1,38 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './roadTrip.css';
+import coinA from '../../Assets/coinA.png';
+import coinB from '../../Assets/coinB.png';
+import coinC from '../../Assets/coinC.png';
+import coinD from '../../Assets/coinD.png';
 
-const RoadTripAnimation = (props) => {
-  const {question} = props;
+
+const RoadTripAnimation = () => {
 
   const canvasRef = useRef(null);
   const canvas2Ref = useRef(null);
+  let pos = [{ x: 390, y: 115 },{ x: 450, y: 150 }, { x: 350, y: 180 },{ x: 470, y: 110 }]
+  const [position, setPosition] = useState(pos);
 
+  const coinAStyle = {
+    left: position[0].x + 'px',
+    top: position[0].y + 'px',
+    transition: 'left 0.5s, top 0.5s',
+}
+const coinBStyle = {
+  left: position[1].x + 'px',
+  top: position[1].y + 'px',
+  transition: 'left 0.5s, top 0.5s',
+}
+const coinCStyle = {
+  left: position[2].x + 'px',
+  top: position[2].y + 'px',
+  transition: 'left 0.5s, top 0.5s',
+}
+const coinDStyle = {
+  left: position[3].x + 'px',
+  top: position[3].y + 'px',
+  transition: 'left 0.5s, top 0.5s',
+}
   useEffect(() => {
     const canvas = canvasRef.current;
     const canvas2 = canvas2Ref.current;
@@ -459,9 +485,6 @@ const RoadTripAnimation = (props) => {
         state.bgpos += (state.currentCurve * 0.02) * (state.speed * 0.2);
         state.bgpos = state.bgpos % canvas.width;
 
-        // ctx.putImageData(storage.bg, state.bgpos, 5);
-        // ctx.putImageData(storage.bg, state.bgpos > 0 ? state.bgpos - canvas.width : state.bgpos + canvas.width, 5);
-
         state.offset += state.speed * 0.05;
         if (state.offset > settings.ground.min) {
           state.offset = settings.ground.min - state.offset;
@@ -489,6 +512,18 @@ const RoadTripAnimation = (props) => {
 
   return (
     <div className="car-animation">
+      <div className='coinA coin-child' style={coinAStyle}>
+        <img src={coinA} alt="" className='coin' />
+      </div >
+      <div className='coinB coin-child' style={coinBStyle}>
+          <img src={coinB} alt="" className='coin' />
+      </div>
+      <div className='coinC coin-child' style={coinCStyle}>
+          <img src={coinC} alt="" className='coin' />
+      </div>
+      <div className='coinD coin-child' style={coinDStyle}>
+          <img src={coinD} alt="" className='coin' />
+      </div>
       <canvas ref={canvasRef} width={800} height={500} className="canvas-anim"/>
       <canvas ref={canvas2Ref} width={800} height={600} style={{display:'none'}}/>
     </div>

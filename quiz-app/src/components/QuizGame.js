@@ -9,7 +9,6 @@ import QuizEntranceView from "./EntranceView/QuizEntranceView";
 import ProgressBar from "./ProgressBar/ProgressBar"
 
 
-
 const QuizGame = () =>{
     const [question,setQuestion] = useState(QUIZ_QUESTIONS)
     const [questionIndex, setQuestionIndex] = useState(0)
@@ -27,8 +26,9 @@ const QuizGame = () =>{
     return (
         <>
             <Background/>
-            { isFirstPage && <QuizEntranceView handleFirstPage={handleFirstPage}/> }
-            {/* {!isFirstPage && <ProgressBar/>} */}
+            {isFirstPage && <QuizEntranceView handleFirstPage={handleFirstPage}/> }
+            
+            {!isFirstPage && <ProgressBar/>}
             {!isFirstPage && <QuizQuestion question={question} questionIndex={questionIndex} handleQuestion={handleQuestion}/>}
             {!isFirstPage && <RoadTripAnimation question={question}/>}
             {!isFirstPage && <Control/>}

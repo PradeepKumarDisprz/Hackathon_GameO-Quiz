@@ -9,3 +9,23 @@
     height: 585px;
     border-radius: 20px;
 }
+
+
+.coin-child{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.coin-child{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}

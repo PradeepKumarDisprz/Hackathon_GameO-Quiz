@@ -21,10 +21,10 @@ function ProgressBar() {
         </div>
       ))}
     </div>
-    <div className='button-container'><button className='btn' onClick={()=>{ 
+    {/* <div className='button-container'><button className='btn' onClick={()=>{ 
         currentStep === QUIZ_QUESTIONS.length ? setIsComplete(true):
         setCurrentStep((prev)=>prev+1)
-        }}>{currentStep === QUIZ_QUESTIONS.length ? "FINISH" : "NEXT"}</button></div>
+        }}>{currentStep === QUIZ_QUESTIONS.length ? "FINISH" : "NEXT"}</button></div> */}
     </>
   );
 }
