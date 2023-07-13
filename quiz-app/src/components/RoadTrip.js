@@ -449,7 +449,42 @@ const RoadTripAnimation = () => {
 
       roundedRect(ctx, "#FFF", startX + 60, startY + 25, 40, 18, 3, true, 0.05);
     };
+    function drawCoin(ctx, x, y, radius) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = 'gold'; // Adjust the coin color as needed
+      ctx.fill();
+      ctx.closePath();
+    }
+    
+    function drawCombinedRoad(minY, maxY, numCoins, coinRadius) {
+      drawGround(ctx, state.offset, colors.ground, colors.groundDark, canvas.width);
 
+      drawRoad(settings.road.min + 6, settings.road.max + 16, 10, colors.roadLine);
+      drawGround(ctx2, state.offset, colors.roadLine, colors.road, canvas.width);
+    drawRoad(settings.road.min, settings.road.max, 10, colors.road);
+     drawRoad(3, 24, 0, ctx.createPattern(canvas2, 'repeat'));
+      const roadWidth = settings.road.max - settings.road.min;
+      const coinSpacing = roadWidth / (numCoins + 1);
+      let coinX = settings.road.min + coinSpacing;
+
+  for (let i = 0; i < numCoins; i++) {
+    drawCoin(ctx, coinX, (minY + maxY) / 2, coinRadius);
+    coinX += coinSpacing;
+  }
+    }
+    
+    // Inside the draw() function, call the modified drawRoad() function:
+   
+    
+    
+    // Usage example:
+    // const canvas = document.getElementById('myCanvas');
+    // const context = canvas.getContext('2d');
+    const coinRadius = 25; // Adjust the coin radius as needed
+    
+   
+    
     const draw = () => {
       setTimeout(() => {
         calcMovement();
@@ -465,12 +500,15 @@ const RoadTripAnimation = () => {
           state.offset = settings.ground.min - state.offset;
           state.startDark = !state.startDark;
         }
-        drawGround(ctx, state.offset, colors.ground, colors.groundDark, canvas.width);
+        // drawGround(ctx, state.offset, colors.ground, colors.groundDark, canvas.width);
 
-        drawRoad(settings.road.min + 6, settings.road.max + 16, 10, colors.roadLine);
-        drawGround(ctx2, state.offset, colors.roadLine, colors.road, canvas.width);
-        drawRoad(settings.road.min, settings.road.max, 10, colors.road);
-        drawRoad(3, 24, 0, ctx.createPattern(canvas2, 'repeat'));
+        // drawRoad(settings.road.min + 6, settings.road.max + 16, 10, colors.roadLine);
+        // drawGround(ctx2, state.offset, colors.roadLine, colors.road, canvas.width);
+        // drawRoad(settings.road.min, settings.road.max, 10, colors.road);
+        // drawRoad(3, 24, 0, ctx.createPattern(canvas2, 'repeat'));
+        // drawCar();
+        // drawCoin(ctx, coinRadius);
+        drawCombinedRoad(settings.road.min, settings.road.max, 4, 10); // Adjust the number of coins and coin radius as needed
         drawCar();
         drawHUD(ctx, 630, 340, colors.hud);
 

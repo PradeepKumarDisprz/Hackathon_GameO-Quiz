@@ -1,10 +1,12 @@
 import './App.css';
-import QuizGame from './Components/QuizGame';
+import QuizGame from './components/QuizGame';
+import ModalPopup from './components/ModalPopup';
 
 function App() {
   return (
     <div className="App">
-      <QuizGame/>
+      {/* <QuizGame/> */}
+      <ModalPopup/>
     </div>
   );
 }
